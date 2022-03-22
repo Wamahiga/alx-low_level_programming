@@ -1,19 +1,22 @@
 /*
- * File: 6-abs.c
+ * File: 7-print_last_digit.c
  * Auth: sabath
  */
 #include "main.h"
 /**
- * _abs - computes the absolute value of an integer
- * @n: The integer to be computed
- *
- * Return: Returns n if n>=0, else -n
+ * print_last_digit - prints the last digit of a number
+ * @n: The number
+ * Return: Value of last digit
  */
-int _abs(int n)
+int print_last_digit(int n)
 {
-	if (n >= 0)
-		return (n);
-	else
-		return (-n);
+	int last_d;
 
+	last_d = n % 10;
+
+	if (last_d < 0) /*convert to positive*/
+		last_d *= -1;
+	_putchar (last_d + '0');
+
+	return (last_d);
 }
